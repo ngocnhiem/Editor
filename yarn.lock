@@ -4796,6 +4796,7 @@ babylonjs-editor-tools@latest:
     babylonjs-node-particle-editor "8.33.2"
     babylonjs-post-process "8.33.2"
     babylonjs-procedural-textures "8.33.2"
+    babylonjs-serializers "8.33.2"
     cannon "0.6.2"
     chokidar "^4.0.3"
     class-variance-authority "^0.7.0"
@@ -4894,6 +4895,14 @@ babylonjs-procedural-textures@8.33.2:
   integrity sha512-DINqrABYWeS/TPAeik9Mb9qg7sZuGzyIOU4siUXIvuDqV0/3jRjpae6rya+CkzQ5H7p2jK/dYav8/qGAckrnYQ==
   dependencies:
     babylonjs "^8.33.2"
+
+babylonjs-serializers@8.33.2:
+  version "8.33.2"
+  resolved "https://registry.yarnpkg.com/babylonjs-serializers/-/babylonjs-serializers-8.33.2.tgz#e76003f434a7f471ce3bee132fe8b0008dbeac81"
+  integrity sha512-4bn+yelHITaRgcMLbz0Q/j5Z4nGQkkEGwZLDnMevAcoPdLheyYQ1lwn561L5NPLUovjOifqxvyZpfBFxHYL5eA==
+  dependencies:
+    babylonjs "^8.33.2"
+    babylonjs-gltf2interface "^8.33.2"
 
 babylonjs@8.33.2, babylonjs@^8.33.2:
   version "8.33.2"

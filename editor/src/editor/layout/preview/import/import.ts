@@ -27,6 +27,7 @@ import { isSprite } from "../../../../tools/guards/sprites";
 import { isTexture } from "../../../../tools/guards/texture";
 import { executeSimpleWorker } from "../../../../tools/worker";
 import { isMultiMaterial } from "../../../../tools/guards/material";
+import { convertGltfMeshesToLeftHanded } from "../../../../tools/mesh/convert";
 import { configureSimultaneousLightsForMaterial } from "../../../../tools/material/material";
 import { onNodesAddedObservable, onTextureAddedObservable } from "../../../../tools/observables";
 
@@ -78,11 +79,14 @@ export async function loadImportedSceneFile(scene: Scene, absolutePath: string):
 
 	const root = result.meshes.find((m) => m.name === "__root__");
 	if (root) {
-		root.scaling.scaleInPlace(100);
-		root.name = basename(absolutePath);
+		// root.scaling.scaleInPlace(100);
+		// root.name = basename(absolutePath);
 
 		// TODO: try cleaning the gltf to remove useless transform nodes. Also, does it make sens to clean the gltf for the user?
 		// cleanImportedGltf(result);
+
+		convertGltfMeshesToLeftHanded(result.meshes);
+		root?.dispose(true, true);
 	}
 
 	result.meshes.forEach((mesh) => {
